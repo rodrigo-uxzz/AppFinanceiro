@@ -94,9 +94,11 @@ export default StyleSheet.create({
     width: 100,
     height: 100,
     backgroundColor:'#212121',
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
     borderRadius: 15,
+    padding: 15,
+    flexDirection: 'column',
   },
 
   botPress1:{
@@ -104,12 +106,23 @@ export default StyleSheet.create({
     transform: [{ scale: 0.98 }], 
   },
 
+  imgBotoes:{
+    width: 30,
+    height: 30,
+    justifyContent: 'flex-start', 
+    alignItems: 'flex-start',
+  },
+
+  textBotoes:{
+    color: '#FFF',
+    fontWeight: 'bold',
+    fontSize: 13,
+  },
+
    v4:{
     flex: 1,
     alignContent: 'center',
     justifyContent: 'center',
-    borderWidth: 2,
-    borderColor: '#FFF',
   },
 
 

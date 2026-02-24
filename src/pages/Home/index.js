@@ -74,7 +74,12 @@ export default function App() {
         styles.botoes,
         pressed && styles.botPress1
         ]}
-        ><Text>Oi</Text>
+        >
+          <Image
+          style={{width: 30, height: 30, justifyContent: 'flex-start', alignItems: 'flex-start'}}
+          source={require('../../../assets/cofri.png')}
+          />
+          <Text style={styles.textBotoes}>Meu Por...</Text>
         </Pressable>
 
         <Pressable
@@ -82,7 +87,12 @@ export default function App() {
         styles.botoes,
         pressed && styles.botPress1
         ]}
-        ><Text>Oi</Text>
+        >
+          <Image
+          style={styles.imgBotoes}
+          source={require('../../../assets/recarga.png')}
+          />
+          <Text style={styles.textBotoes}>Recargas</Text>
         </Pressable>
 
         <Pressable
@@ -90,13 +100,20 @@ export default function App() {
         styles.botoes,
         pressed && styles.botPress1
         ]}
-        ><Text>Oi</Text>
+        >
+          <Image
+          style={styles.imgBotoes}
+          source={require('../../../assets/moeda.png')}
+          />
+          <Text style={styles.textBotoes}>Poupança</Text>
         </Pressable>
 
 
       </View>
       
-      <View style={styles.v4}></View>
+      <View style={styles.v4}>
+        ScrowV
+      </View>
       
       <StatusBar style="auto" />
     </View>
