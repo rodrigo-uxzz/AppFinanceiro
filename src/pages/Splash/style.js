@@ -5,7 +5,7 @@ Container:{
     flex:1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#1a1d22"
+    backgroundColor: "#161616"
 },
 
 logoSplash:{

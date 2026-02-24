@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View, TextInput, Image, Pressable } from 'react-native';
+import { Text, View, TextInput, Image, Pressable, Modal } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import styles from "./style";
 
@@ -9,7 +9,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.v1}>
-<Image 
+            <Image 
             source={require("../../../assets/laele.png")}
             style={styles.iconsTop}
             />
@@ -35,6 +35,7 @@ export default function App() {
             {/* Botoes */}
 
             <Pressable 
+              onPress={() => navigation.navigate('Home')}
               style={({pressed}) => [
                 styles.batom1,
                 pressed && styles.batomPress1

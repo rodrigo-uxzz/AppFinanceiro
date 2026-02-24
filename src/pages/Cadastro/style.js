@@ -5,21 +5,30 @@ export default StyleSheet.create({
 
 container:{
     flex:1,
-    backgroundColor: "#1a1d22",
+    backgroundColor: "#161616",
 },
 
 v1:{
-    flex:0.50,
-    justifyContent: "center",
+    flex:0.30,
+    justifyContent: "flex-start",
     alignItems: "center",
 },
 
-//imagens inter
-logoSplash:{
-    width: 150, 
-    height: 100,
-    resizeMode: "contain",
+//botao voltar
+iconsTop:{
+    width: 30, 
+    height: 30,
+    alignSelf: "flex-start",
+    textAlign: "center",
+    marginLeft: 20,
+    marginBottom: 20,
 },
+    setaimg:{
+        width: 100, 
+        height: 100,
+        resizeMode: "contain",
+        alignSelf: "center",
+    },  
 
 v2:{
     flex:1,
@@ -36,11 +45,20 @@ textoA:{
     justifyContent: "flex-start",
     alignSelf: "flex-start",
     marginLeft: 20,
-    marginBottom: 20,
+    marginBottom: 40,
+},
+
+textoMini:{
+    color: "#fff",
+    fontSize: 14,
+    marginBottom: 5,
+    justifyContent: "flex-start",
+    alignSelf: "flex-start",
+    marginLeft: 20,
 },
 
 cadastro:{
-    backgroundColor: "#1a1d22",
+    backgroundColor: "#161616",
     width: 330,
     height: 50,
     borderRadius: 15,
