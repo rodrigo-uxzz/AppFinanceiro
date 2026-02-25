@@ -71,7 +71,7 @@ cadastro:{
 
 //parte finalizar
 v3:{
-    flex:0.50,
+    flex:0.40,
     justifyContent: "center",
     alignItems: "center",
 },

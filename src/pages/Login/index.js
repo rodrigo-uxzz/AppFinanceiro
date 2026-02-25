@@ -6,6 +6,17 @@ import styles from "./style";
 export default function App() {
   const navigation = useNavigation();
   
+  const recuperarObj = async () => {
+    try {
+      const obj = await AsyncStorage.getItem("@Aluno");
+      if (obj !== null) {
+        const valor = JSON.parse(obj)
+      }
+    } catch (error) {
+      console.log("Erro ao carregar", error);
+    }
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.v1}>
@@ -35,7 +46,7 @@ export default function App() {
             {/* Botoes */}
 
             <Pressable 
-              onPress={() => navigation.navigate('Home')}
+              onPress={recuperarObj}
               style={({pressed}) => [
                 styles.batom1,
                 pressed && styles.batomPress1

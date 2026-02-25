@@ -2,9 +2,31 @@ import { StatusBar } from 'expo-status-bar';
 import { Text, View, TextInput, Image, Pressable } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import styles from "./style";
+import React, { useState, useEffect } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function App() {
     const navigation = useNavigation();
+    const [nome, setNome] = useState("");
+    const [cpf, setCpf] = useState("");
+    const [dataNasc, setDataNasc] = useState("");
+    const [email, setEmail] = useState("");
+    const [senha, setSenha] = useState("");
+
+    const addObj = async () => {
+      const aluno={
+        nome: nome,
+        cpf: cpf,
+        dataNasc: dataNasc,
+        email: email,
+        senha: senha
+      }
+
+      await AsyncStorage.setItem("@Aluno", JSON.stringify(aluno) )
+      navigation.replace("Login")
+      console.log("Salvo com sucesso")
+
+  }
 
   return (
     <View style={styles.container}>
@@ -31,6 +53,8 @@ export default function App() {
                 style={styles.cadastro}
                 placeholder="Nome completo"
                 placeholderTextColor={'#888282'}
+                value={nome}
+                onChangeText={setNome}
                 />
 
             <Text style={styles.textoMini}>Seu CPF</Text>
@@ -38,6 +62,8 @@ export default function App() {
                 style={styles.cadastro}
                 placeholder='CPF'
                 placeholderTextColor={'#888282'}
+                value={cpf}
+                onChangeText={setCpf}
                 />
 
             <Text style={styles.textoMini}>Data de nascimento</Text>
@@ -45,6 +71,8 @@ export default function App() {
                 style={styles.cadastro}
                 placeholder='dd/mm/aaaa'
                 placeholderTextColor={'#888282'}
+                value={dataNasc}
+                onChangeText={setDataNasc}
             />
             
             <Text style={styles.textoMini}>Seu e-mail</Text>
@@ -52,20 +80,26 @@ export default function App() {
                 style={styles.cadastro}
                 placeholder='e-mail'
                 placeholderTextColor={'#888282'}
+                value={email}
+                onChangeText={setEmail}
+                
             />
 
-            <Text style={styles.textoMini}>Seu número de celular</Text>
+            <Text style={styles.textoMini}>Senha</Text>
             <TextInput
                 style={styles.cadastro}
-                placeholder='celular'
+                placeholder='senha'
                 placeholderTextColor={'#888282'}
+                value={senha}
+                onChangeText={setSenha}
+                
             />   
 
         </View>
         <View style={styles.v3}>
 
             <Pressable 
-                onPress={() => navigation.navigate('Login', { showSuccessModal: true })}
+                onPress={addObj}
                 style={({pressed}) => [
                 styles.batom1,
                 pressed && styles.batomPress1,

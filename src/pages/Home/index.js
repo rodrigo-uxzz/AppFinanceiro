@@ -2,11 +2,29 @@ import { StatusBar } from 'expo-status-bar';
 import { Text, View, TextInput, Image, Pressable, Modal } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import styles from "./style";
+import { ScrollView } from 'react-native-web';
+import { useState } from 'react';
 
 export default function App() {
 
+  const[modalVisible, setModalVisible] = useState(false);
+
   return (
     <View style={styles.container}>
+      <Modal 
+
+      transparent={false}
+      visible={modalVisible}
+      >
+
+      <Pressable
+        onPress={()=> setModalVisible(false)}
+      >
+        <Text>
+          Voltar
+        </Text>
+      </Pressable>
+      </Modal>
       <View style={styles.v1}>
         <Image
           source={require('../../../assets/topdms.jpeg')}
@@ -64,7 +82,7 @@ export default function App() {
         </Pressable>
         
       </View>
-
+          
       
       {/* botões menu */}
       <View style={styles.v3}>
@@ -74,6 +92,7 @@ export default function App() {
         styles.botoes,
         pressed && styles.botPress1
         ]}
+        onPress={() => setModalVisible(true)}
         >
           <Image
           style={{width: 30, height: 30, justifyContent: 'flex-start', alignItems: 'flex-start'}}
@@ -112,7 +131,9 @@ export default function App() {
       </View>
       
       <View style={styles.v4}>
-        ScrowV
+        <ScrollView>
+
+        </ScrollView>
       </View>
       
       <StatusBar style="auto" />

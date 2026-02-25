@@ -13,6 +13,19 @@ export default function Splash({navigation}) {
         setTimeout(() => {
             navigation.replace("Login");
         }, 3000);
+        
+        const recuperarObj = async () => {
+            try {
+                const obj = await AsyncStorage.getItem("@Aluno");
+                if (obj !== null) {
+                    
+                    const valor = JSON.parse(obj)
+                    console.log(valor.idade)
+                }
+            } catch (error) {
+                console.log("Erro ao carregar", error);
+            }
+        };
     }, []); 
     
     return(
