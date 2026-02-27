@@ -4,7 +4,7 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
 container:{
     flex:1,
-    backgroundColor: "#1a1d22",
+    backgroundColor: "#161616",
 },
 v1:{
     flex:0.20,
@@ -24,7 +24,7 @@ iconsTop:{
     width: 120, 
     height: 35,
     resizeMode: "contain",
-    marginTop: 5,
+    marginTop: 20,
 },
 
 logoSplash:{
@@ -37,7 +37,7 @@ logoSplash:{
 //parte do login
 
 login:{
-    backgroundColor: "#1a1d22",
+    backgroundColor: "#161616",
     width: 330,
     height: 50,
     borderRadius: 15,
