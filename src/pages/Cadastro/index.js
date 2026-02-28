@@ -4,6 +4,8 @@ import { useNavigation } from '@react-navigation/native';
 import styles from "./style";
 import React, { useState, useEffect } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import * as Animatable from "react-native-animatable";
+
 
 export default function App() {
     const navigation = useNavigation();
@@ -14,7 +16,7 @@ export default function App() {
     const [senha, setSenha] = useState("");
 
     const addObj = async () => {
-      const aluno={
+      const usuario={
         nome: nome,
         cpf: cpf,
         dataNasc: dataNasc,
@@ -22,15 +24,18 @@ export default function App() {
         senha: senha
       }
 
-      await AsyncStorage.setItem("@Aluno", JSON.stringify(aluno) )
+      await AsyncStorage.setItem("@Usuario", JSON.stringify(usuario) )
       navigation.replace("Login")
       console.log("Salvo com sucesso")
 
   }
 
   return (
-    <View style={styles.container}>
-        <View style={styles.v1}>
+    <Animatable.View 
+    animation="bounceInRight"
+    duration={200}
+    style={styles.container}>
+        {/* <View style={styles.v1}>
             <Pressable 
               onPress={() => navigation.navigate('Login')}
               style={({pressed}) => [
@@ -42,7 +47,7 @@ export default function App() {
                 style={styles.setaimg}
                 />
                 </Pressable>
-        </View>
+        </View> */}
 
         <View style={styles.v2}>
 
@@ -111,6 +116,6 @@ export default function App() {
         </View>
 
       <StatusBar style="auto" />
-    </View>
+    </Animatable.View>
   );
 }

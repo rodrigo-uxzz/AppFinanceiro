@@ -4,29 +4,37 @@ import { useNavigation } from "@react-navigation/native";
 import React, {useEffect} from "react";
 import styles from './style';
 import * as Animatable from "react-native-animatable";
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 export default function Splash({navigation}) {
 
-    useEffect(() => {
-        setTimeout(() => {
-            navigation.replace("Login");
-        }, 3000);
-        
-        const recuperarObj = async () => {
+    const recuperarObj = async () => {
             try {
-                const obj = await AsyncStorage.getItem("@Aluno");
-                if (obj !== null) {
-                    
-                    const valor = JSON.parse(obj)
-                    console.log(valor.idade)
+                const user = await AsyncStorage.getItem("@Usuario");
+                const login = await AsyncStorage.getItem("@Logado");
+                if (user == null) {
+                        navigation.replace('Cadastro')
+                        return;      
+                }else{
+
+                    if (login !== null) {
+                        navigation.replace('Home')    
+                    }else{
+                        navigation.replace('Login')
+                    }
                 }
             } catch (error) {
                 console.log("Erro ao carregar", error);
             }
         };
-    }, []); 
+
+    useEffect(() => {
+        setTimeout(() => {
+            recuperarObj();
+        }, 3000);
+
+    }, [])
     
     return(
         <View style={styles.Container}>

@@ -70,12 +70,28 @@ export default StyleSheet.create({
     marginTop: 10,  
     justifyContent: 'center',
   },
+
+  batom3:{
+    backgroundColor: "#ff7b00",
+    height: 45,
+    width: 200,
+    padding: 15,
+    borderRadius: 50,
+    color: "#fff",
+    marginLeft: 5,
+    marginBottom: 5, 
+    marginTop: 10,  
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   //efeito de clique 2
   batomPress2: {
     backgroundColor: '#fc973890', 
     opacity: 0.9,
     transform: [{ scale: 0.98 }], 
   },
+
+
     texto2: {
      color: '#FF7A00',
      fontWeight: 'bold',
@@ -124,6 +140,75 @@ export default StyleSheet.create({
     alignContent: 'center',
     justifyContent: 'center',
   },
+
+  // {Modal do meu porquinho}
+  modalV1:{
+    flex: 0.20,
+    flexDirection: 'row',
+    a4lignItems: 'center',
+    backgroundColor: '#212121',
+  },
+
+  textModalV1:{
+    color: '#FFF',
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginTop: 17,
+    marginLeft: 20,
+    fontFamily: 'Arial',
+  },
+
+  modalV2:{
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#212121',
+    gap: 25,
+
+  },
+  imgModalV2:{
+    width: 170,
+    height: 170,
+    marginTop: 20,
+  },
+
+  textModalV2:{
+    color: '#FFF',
+    fontSize: 18,
+    fontFamily: 'Arial',
+  },
+
+
+  modalV3:{
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#212121',
+  },
+
+  inputModalV3:{
+    width: 250,
+    height: 50,
+    backgroundColor: '#212121',
+    padding: 15,
+    color: '#ffffff',
+    textShadowColor: '#ff8512', 
+    textShadowOffset: { width: 2, height: 1 },
+    textShadowRadius: 15,
+    marginBottom: 10,
+    outlineStyle: 'none',
+    fontSize: 17,
+    borderBottomWidth: 2,
+    borderBottomColor: '#ff8512',
+  },
+
+  modalV4:{
+    flex: 0.50,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#212121',
+  }
 
 
 });
